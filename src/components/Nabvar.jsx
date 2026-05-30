@@ -5,7 +5,7 @@ function Navbar(){
         <nav className="navbar">
 
             <Link to="/" className="logo">
-                Dev<span className="logoSpan">Profile</span>
+                Dev<span className="resaltar">Profile</span>
             </Link>
 
 
