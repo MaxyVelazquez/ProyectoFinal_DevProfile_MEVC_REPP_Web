@@ -6,7 +6,9 @@ function CVProvider({children}){
     const [datosPersonales, setDatosPersonales] = useState({
         nombre: '',
         carrera: '',
-        ciudad: '',
+        pais: '',
+        estado: '',
+        municipio: '',
         correo: '',
         telefono: '',
         descripcion: '',

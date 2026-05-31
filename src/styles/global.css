@@ -101,7 +101,16 @@
     background-color: #ebebeb;
 }
 
-.btnCrearCurri{
+.containerBtnVerPreview{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background-color: #ebebeb;
+}
+
+.btnCrearCurri, .btnVerPreview{
     background-color: rgb(209, 118, 65);
     color: white;
     border: none;
@@ -113,6 +122,71 @@
     border-radius: 6px;
 }
 
-.btnCrearCurri:hover{
+.btnCrearCurri:hover, .btnVerPreview:hover{
     background-color: rgb(180, 100, 55);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.formGrupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.formGrupo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.formGrupo input,
+.formGrupo textarea {
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.formGrupo input:focus,
+.formGrupo textarea:focus {
+  border-color: rgb(209, 118, 65);
+}
+
+.formGrupo textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formFull {
+  grid-column: 1 / -1;  /* ocupa las dos columnas */
+}
+
+.enlacesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btnAgregarEnlace {
+  background: none;
+  border: 1.5px dashed rgb(209, 118, 65);
+  color: rgb(209, 118, 65);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 0.4rem;
+  transition: background-color 0.2s ease;
+}
+
+.btnAgregarEnlace:hover {
+  background-color: rgba(209, 118, 65, 0.08);
 }
