@@ -1,12 +1,22 @@
 import SkillForm from "../components/SkillForm";
 import SkillCard from "../components/SkillCard"
+import { useNavigate } from "react-router-dom"
+import PersonalForm from "../components/PersonalForm"
+
+
 
 
 function Editor() {
+  const navigate = useNavigate();
   return (
-    <div style={{ padding: '2rem', width: '100%' }}>
-      <h1>Editor</h1>
-      <SkillForm />
+    <div>
+      <div>
+        <PersonalForm/>
+        <SkillForm/>
+      </div>
+      <div className="containerBtnVerPreview">
+        <button className="btnVerPreview" onClick={() => navigate('/preview')}>Ver preview</button>
+      </div>
     </div>
   )
 }
