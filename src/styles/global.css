@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&display=swap');
+
+
+
 .navbar {
   display: flex;
   align-items: center;
@@ -126,6 +130,133 @@
     background-color: rgb(180, 100, 55);
 }
 
+
+/* ===== SKILL FORM ===== */
+.skill-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+.skill-form h2 {
+  color: #1a1a2e;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-form input,
+.skill-form select {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #444;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.skill-form input:focus,
+.skill-form select:focus {
+  border-color: rgb(209, 118, 65);
+}
+
+.skill-form button {
+  background-color: rgb(209, 118, 65);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-start;
+}
+
+.skill-form button:hover {
+  background-color: rgb(180, 100, 55);
+}
+
+/* ===== SKILL CARD ===== */
+.skill-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 220px;
+  min-widt: 200px;
+}
+
+.skill-card h3 {
+  color: #1a1a2e;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.skill-card p {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.skill-card div {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-card button {
+  flex: 1;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.skill-card button:first-child {
+  background-color: #1a1a2e;
+  color: white;
+}
+
+.skill-card button:first-child:hover {
+  background-color: #2a2a4e;
+}
+
+.skill-card button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.skill-card button:last-child:hover {
+  background-color: #c0392b;
+}
+
+/* ===== SKILLS LIST ===== */
+.skills-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 0.8rem;
+  margin-top: -0.5rem;
+}
 .form {
   display: grid;
   grid-template-columns: 1fr 1fr;
