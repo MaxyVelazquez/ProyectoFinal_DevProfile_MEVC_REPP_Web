@@ -3,7 +3,7 @@ function Footer(){
         <footer className="footer">
             <p>© Generador de currículum vitae profesional — 2026</p>
             <br /><hr /><br />
-            <p>Maxy Emiliano Velazquez Cuellar - Rey Emmanuel Picazo Perez</p>
+            <p>Rey Emmanuel Picazo Perez - Maxy Emiliano Velazquez Cuellar</p>
         </footer>
     );
 }

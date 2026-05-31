@@ -1,3 +1,6 @@
+import maxyVelazquez from '../assets/imagenes/maxyVelazquez.jpeg';
+import reyPicazo from '../assets/imagenes/reyPicazo.jpeg';
+
 function About() {
   return (
     <div className="about">
@@ -7,6 +10,7 @@ function About() {
       </div>
       <div className="descripcion">
         <h4>DevProfile es una herramienta diseñada para ayudarte a crear y gestionar tu currículum vitae de manera profesional y eficiente.</h4>
+        <hr />
       </div>
       <div className="cards">
         <div className="card">
@@ -32,6 +36,23 @@ function About() {
         <div className="card">
           <h6>Contacto</h6>
           <p>Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos: rincontesoros@gmail.com</p>
+        </div>
+      </div>
+      <div className="containerImgEquipo">
+        <div>
+          <h2>Nuestro Equipo</h2>
+        </div>
+        <div className="equipo">
+          <div className="miembro">
+            <img src={reyPicazo} alt="reyPicazo.jpeg" />
+            <p>Rey Picazo</p>
+            <span>Cazador de duendes</span>
+          </div>
+          <div className="miembro">
+            <img src={maxyVelazquez} alt="maxyVelazquez.jpeg" />
+            <p>Maxy Velazquez</p>
+            <span>Tocador de mujeres</span>
+          </div>
         </div>
       </div>
     </div>
