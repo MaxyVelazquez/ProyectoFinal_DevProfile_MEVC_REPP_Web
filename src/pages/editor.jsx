@@ -10,6 +10,8 @@ function Editor() {
   const navigate = useNavigate();
   return (
     <div>
+      <h1 className="titulo">Editor</h1>
+      <p className="subtitulo">Rellene los campos con su informacion personal</p>
       <div>
         <PersonalForm/>
         <SkillForm/>

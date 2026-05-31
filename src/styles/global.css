@@ -2,6 +2,13 @@
 
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .navbar {
   display: flex;
   align-items: center;
@@ -192,7 +199,7 @@
   flex-direction: column;
   gap: 0.4rem;
   width: 220px;
-  min-widt: 200px;
+  min-width: 200px;
 }
 
 .skill-card h3 {
@@ -320,4 +327,26 @@
 
 .btnAgregarEnlace:hover {
   background-color: rgba(209, 118, 65, 0.08);
+}
+
+.titulo{
+    padding: 2rem;
+    padding-bottom: 0%;
+}
+
+.subtitulo{
+    padding: 2rem;
+    padding-top: 0%;
+    color: #1a1a2e;
+    font-size: 1.2rem;
+}
+
+.footer {
+  background-color: #1a1a2e;
+  color: white;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3rem;
+
 }
