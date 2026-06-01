@@ -5,6 +5,7 @@ import SkillCard from "./SkillCard";
 function SkillForm(){
     const {habilidades, setHabilidades}=useContext(CVContext);
 
+
     const [form, setForma]=useState({
         nombre: "",
         categoria: "",
@@ -13,6 +14,7 @@ function SkillForm(){
     });
     const [editandoId, setEditandoId]=useState(null);
     const [errores, setErrores]=useState({});
+    
 
     function manejarCambio(e){
         setForma({...form, [e.target.name]: e.target.value});
