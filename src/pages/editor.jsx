@@ -28,6 +28,14 @@ function Editor() {
     if(indice>0)setIndice(indice-1);
   }
   return (
+
+    <div>
+      <h1 className="titulo">Editor</h1>
+      <p className="subtitulo">Rellene los campos con su informacion personal</p>
+      <div>
+        <PersonalForm/>
+        <SkillForm/>
+
     <div className="editor-container">
 
       <div className="editor-navbar">
