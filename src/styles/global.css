@@ -1550,3 +1550,25 @@
 @page{
     margin: 0;
   }
+
+
+
+
+.hero-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.chart-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.chart-wrapper {
+    width: 800px;
+    max-width: 100%;
+}
+

@@ -26,9 +26,10 @@ function SkillChart(){
         <div className="skill-chart">
             <h2>Habilidades</h2>
             <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={datos}>
+                <BarChart data={datos} margin={{ top: 10, right: 30, left: 30, bottom: 10 }}>
                     <XAxis dataKey="nombre" />
                     <YAxis 
+                        width={90}
                         domain={[0, 3]} 
                         ticks={[1,2,3]}
                         tickFormatter={(valor)=>{

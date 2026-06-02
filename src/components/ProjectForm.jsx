@@ -19,6 +19,9 @@ function ProjectForm(){
     const [errores, setErrores] = useState({});
     const [mostrarRepo, setMostrarRepo] = useState(false)
     const [mostrarDeploy, setMostrarDeploy] = useState(false)
+    const [repoConfirmado, setRepoConfirmado] = useState(false);
+    const [deployConfirmado, setDeployConfirmado] = useState(false);
+
 
     function manejarCambio(e){
         setForm({...form, [e.target.name]: e.target.value});
@@ -102,6 +105,8 @@ function ProjectForm(){
         setErrores({});
         setMostrarRepo(false);
         setMostrarDeploy(false);
+        setRepoConfirmado(false);
+        setDeployConfirmado(false);
         
     }
 
@@ -146,6 +151,8 @@ function ProjectForm(){
         setErrores({});
         setMostrarRepo(proyecto.repositorio ? true : false);
         setMostrarDeploy(proyecto.deploy ? true : false);
+        setRepoConfirmado(proyecto.repositorio ? true: false);
+        setDeployConfirmado(proyecto.deploy ? true :false);
     }
     function eliminarTecnologia(tech){
         setForm({
@@ -173,6 +180,8 @@ function ProjectForm(){
             setErrores({});
             setMostrarRepo(false);
             setMostrarDeploy(false);
+            setRepoConfirmado(false);
+            setDeployConfirmado(false);
         }
         
     }
@@ -216,32 +225,36 @@ function ProjectForm(){
                 {errores.tecnologias && <span className="error">{errores.tecnologias}</span>}
                 <input type="file" accept=".png, .jpg, .jpeg" onChange={manejarImagen} />
                 {form.imagen && <img src={form.imagen} alt="Imagen del proyecto" />}
-                {form.repositorio ?(
+                {repoConfirmado ?(
                     <div className="enlace-card">
                         <span>{form.repositorio}</span>
-                        <button type="button" onClick={() => setForm({ ...form, repositorio: '' })}>✕</button>
+                        <button type="button" onClick={() => {setForm({ ...form, repositorio: '' }); setRepoConfirmado(false);}}>✕</button>
                     </div>
                 ): mostrarRepo ?(
                     <>
                         <input name="repositorio" placeholder="URL del repositorio" value={form.repositorio} onChange={manejarCambio} />
-                        {errores.repositorio && <span className="error">{errores.repositorio}</span>}
+                        
+                        <button type="button" onClick={()=>{setRepoConfirmado(true);}}>Confirmar</button>
                     </>
                 ): (
                     <button type="button" className="btn-agregar-enlace" onClick={() => setMostrarRepo(true)}>+ Repositorio</button>
                 )}
-                {form.deploy?(
+                {errores.repositorio && <span className="error">{errores.repositorio}</span>}
+                {deployConfirmado ?(
                     <div className="enlace-card">
                         <span>{form.deploy}</span>
-                        <button type="button" onClick={() => setForm({ ...form, deploy: '' })}>✕</button>
+                        <button type="button" onClick={() => {setForm({ ...form, deploy: '' }); setDeployConfirmado(false);}}>✕</button>
                     </div>
                 ): mostrarDeploy?(
                     <>
                         <input name="deploy" placeholder="URL del deploy" value={form.deploy} onChange={manejarCambio} />
-                        {errores.deploy && <span className="error">{errores.deploy}</span>}
+                        
+                        <button type="button" onClick={()=>{setDeployConfirmado(true);}}>Confirmar</button>
                     </>
                 ): (
                     <button type="button" className="btn-agregar-enlace" onClick={() => setMostrarDeploy(true)}>+ Deploy</button>
                 )}
+                {errores.deploy && <span className="error">{errores.deploy}</span>}
                 <button type="button" onClick={agregarProyecto}>
                     {editandoId ? 'Actualizar' : 'Agregar'} Proyecto
                 </button>

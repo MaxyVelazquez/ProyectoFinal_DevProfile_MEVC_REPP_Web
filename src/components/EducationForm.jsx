@@ -16,6 +16,7 @@ function EducationForm(){
     const [editandoId, setEditandoId] = useState(null);
     const [errores, setErrores] = useState({});
     const [mostrarLink, setMostrarLink] = useState(false);
+    const [linkConfirmado, setLinkConfirmado] = useState(false);
 
 
     function manejarCambio(e){
@@ -91,6 +92,7 @@ function EducationForm(){
         });
         setErrores({});
         setMostrarLink(false);
+        setLinkConfirmado(false);
     } 
 
     function editarEducacion(educacion){
@@ -104,6 +106,7 @@ function EducationForm(){
         setEditandoId(educacion.id);
         setErrores({});
         setMostrarLink(educacion.enlace ? true : false);
+        setLinkConfirmado(educacion.enlace ? true : false);
     }
 
     function eliminarEducacion(id){
@@ -119,6 +122,7 @@ function EducationForm(){
             setEditandoId(null);
             setErrores({});
             setMostrarLink(false);
+            setLinkConfirmado(false);
         }
     }
     return(
@@ -138,20 +142,21 @@ function EducationForm(){
                 <input name="descripcion" placeholder="Descripción breve" value={form.descripcion} onChange={manejarCambio} />
                 {errores.descripcion && <span className="error">{errores.descripcion}</span>}
 
-                {form.enlace ? (
+                {linkConfirmado ? (
                 <div className="enlace-card">
                     <span>{form.enlace}</span>
-                    <button type="button" onClick={() => setForm({ ...form, enlace: '' })}>✕</button>
+                    <button type="button" onClick={()=>{setLinkConfirmado(false); setForm({...form, enlace: ''});}}>✕</button>
                 </div>
                 ) : mostrarLink ? (
                 <>
                     <input name="enlace" placeholder="URL de evidencia" value={form.enlace} onChange={manejarCambio} />
-                    {errores.enlace && <span className="error">{errores.enlace}</span>}
+                    <button type="button" onClick={() => setLinkConfirmado(true)}>Confirmar enlace</button>
+                    
                 </>
                 ) : (
                 <button type="button" className="btn-agregar-enlace" onClick={() => setMostrarLink(true)}>+ Agregar enlace de evidencia</button>
                 )}
-
+                {errores.enlace && <span className="error">{errores.enlace}</span>}
                 <button type="button" onClick={agregarEducacion}>
                 {editandoId ? 'Actualizar' : 'Agregar'} Educación
                 </button>

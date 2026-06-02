@@ -10,10 +10,16 @@ function SkillCard({habilidad, onEditar, onEliminar}){
             <p><strong>Categoría: </strong>{habilidad.categoria}</p>
             <p><strong>Nivel: </strong>{habilidad.nivel}</p>
             <p><strong>Descripción: </strong>{habilidad.descripcion}</p>
-            <div>
-                <button onClick={() => onEditar(habilidad)}>Editar</button>
-                <button onClick={() => onEliminar(habilidad.id)}>Eliminar</button>
-            </div>
+            {(onEditar || onEliminar) && (
+                <div>
+                    {onEditar && (
+                        <button onClick={() => onEditar(habilidad)}>Editar </button>
+                    )}
+                    {onEliminar && (
+                        <button onClick={() => onEliminar(habilidad.id)}>Eliminar</button>
+                    )}
+                </div>
+            )}
         </div>
     )
 }
