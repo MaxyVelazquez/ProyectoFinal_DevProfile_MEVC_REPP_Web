@@ -1,7 +1,12 @@
+import SkillChart from "../components/SkillChart"
+
+
+
 function Dashboard() {
   return (
-    <div>
+    <div className="dashboard-container">
       <h1>Dashboard</h1>
+      <SkillChart />
     </div>
   )
 }
