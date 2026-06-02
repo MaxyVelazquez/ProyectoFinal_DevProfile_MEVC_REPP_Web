@@ -42,6 +42,8 @@ function CVProvider({ children }) {
     return guardado ? JSON.parse(guardado) : []
   })
 
+  const [imagen, setImagen] = useState(null);
+
   useEffect(() => {
     localStorage.setItem('datosPersonales', JSON.stringify(datosPersonales))
   }, [datosPersonales])
@@ -73,7 +75,8 @@ function CVProvider({ children }) {
       habilidades, setHabilidades,
       proyectos, setProyectos,
       educacion, setEducacion,
-      experiencia, setExperiencia
+      experiencia, setExperiencia,
+      imagen, setImagen
     }}>
       {children}
     </CVContext.Provider>
