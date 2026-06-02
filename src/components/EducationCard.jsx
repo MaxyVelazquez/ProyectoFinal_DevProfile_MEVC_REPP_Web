@@ -1,6 +1,3 @@
-import { useState, useContext } from "react";
-import { CVContext } from "../context/CVContext";
-
 
 function EducationCard({ item, onEliminar, onEditar }) {
     return(
