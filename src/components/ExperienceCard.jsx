@@ -10,10 +10,16 @@ function ExperienceCard({ item, onEditar, onEliminar }) {
           <span key={index} className="tech-badge">{tech}</span>
         ))}
       </div>
-      <div className="experience-card-actions">
-        <button onClick={() => onEditar(item)}>Editar</button>
-        <button onClick={() => onEliminar(item.id)}>Eliminar</button>
-      </div>
+      {(onEditar || onEliminar) && (
+        <div className="experience-card-actions">
+            {onEditar && (
+                <button onClick={() => onEditar(item)}>Editar </button>
+            )}
+            {onEliminar && (
+                <button onClick={() => onEliminar(item.id)}>Eliminar</button>
+            )}
+        </div>
+      )}
     </div>
   );
 }

@@ -20,10 +20,16 @@ function ProjectCard({ proyecto, onEditar, onEliminar }) {
             <p>{proyecto.deploy && <a href={proyecto.deploy} target="_blank" rel="noopener noreferrer">Deploy</a>}</p>
 
             {proyecto.imagen && <img src={proyecto.imagen} alt={proyecto.nombre} />}
-            <div className="project-card-actions">
-                <button onClick={() => onEditar(proyecto)}>Editar</button>
-                <button onClick={() => onEliminar(proyecto.id)}>Eliminar</button>
-            </div>
+            {(onEditar || onEliminar) && (
+                <div className="project-card-actions">
+                    {onEditar && (
+                        <button onClick={() => onEditar(proyecto)}>Editar </button>
+                    )}
+                    {onEliminar && (
+                        <button onClick={() => onEliminar(proyecto.id)}>Eliminar</button>
+                    )}
+                </div>
+            )}
         </div>
     )
 }
