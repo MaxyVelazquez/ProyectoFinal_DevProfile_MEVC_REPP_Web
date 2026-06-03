@@ -1612,3 +1612,21 @@
 
 }
 
+
+.form button {
+  background-color: rgb(209, 118, 65);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-start;
+}
+
+.form button:hover {
+  background-color: rgb(180, 100, 55);
+}
+
