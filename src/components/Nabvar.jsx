@@ -1,20 +1,26 @@
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Navbar(){
     const [tema, setTema] = useState(
         localStorage.getItem('tema') || 'claro'
     );
 
+    useEffect(() => {
+        document.documentElement.classList.toggle(
+            'dark',
+            tema === 'oscuro'
+        );
+    }, [tema]);
+
     function cambiarTema() {
-        const nuevoTema = tema === 'oscuro' ? 'claro' : 'oscuro';
+        const nuevoTema =
+        tema === 'oscuro'
+            ? 'claro'
+            : 'oscuro';
 
         setTema(nuevoTema);
         localStorage.setItem('tema', nuevoTema);
-
-        document.getElementById('tema-css').href = nuevoTema === 'oscuro'
-            ? '/src/styles/dark-mode.css'
-            : '/src/styles/global.css';
     }
 
     return (
