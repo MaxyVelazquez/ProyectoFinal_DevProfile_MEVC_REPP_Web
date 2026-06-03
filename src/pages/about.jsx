@@ -46,12 +46,10 @@ function About() {
           <div className="miembro">
             <img src={reyPicazo} alt="reyPicazo.jpeg" />
             <p>Rey Picazo</p>
-            <span>Cazador de duendes</span>
           </div>
           <div className="miembro">
             <img src={maxyVelazquez} alt="maxyVelazquez.jpeg" />
             <p>Maxy Velazquez</p>
-            <span>Tocador de mujeres</span>
           </div>
         </div>
       </div>

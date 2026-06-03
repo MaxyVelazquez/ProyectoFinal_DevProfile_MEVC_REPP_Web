@@ -1,6 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 
 function Navbar(){
+    const [tema, setTema] = useState(
+        localStorage.getItem('tema') || 'claro'
+    );
+
+    function cambiarTema() {
+        const nuevoTema = tema === 'oscuro' ? 'claro' : 'oscuro';
+
+        setTema(nuevoTema);
+        localStorage.setItem('tema', nuevoTema);
+
+        document.getElementById('tema-css').href = nuevoTema === 'oscuro'
+            ? '/src/styles/dark-mode.css'
+            : '/src/styles/global.css';
+    }
+
     return (
         <nav className="navbar">
 
@@ -16,6 +32,10 @@ function Navbar(){
                 <li><NavLink to="/editor" className={({isActive}) => isActive ? "active" : ""}>Editor</NavLink></li>
                 <li><NavLink to="/preview" className={({isActive}) => isActive ? "active" : ""}>Previsualizar</NavLink></li>
             </ul>
+
+            <button className="btnModoOscuro" onClick={cambiarTema}>
+                {localStorage.getItem('tema') === 'oscuro' ? 'Modo Claro' : 'Modo Oscuro'}
+            </button>
 
         </nav>
     );
