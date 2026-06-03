@@ -1,12 +1,16 @@
-import SkillChart from "../components/SkillChart"
 import Resumen from "../components/Resumen";
 
 
 function Dashboard() {
   return (
-    <div className="dashboard-container">
-      <h1>Dashboard</h1>
-      <Resumen/>
+    <div>
+      <div className="dashboard-container">
+        <h1 className="titulo">Panel de control</h1>
+        <p className="subtitulo">Vea su resumen de perfil</p>
+      </div>
+      <div className="containerResumen">
+        <Resumen/>
+      </div>
     </div>
   )
 }
