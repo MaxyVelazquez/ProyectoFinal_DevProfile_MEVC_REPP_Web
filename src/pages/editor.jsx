@@ -32,7 +32,7 @@ function Editor() {
   return (
 
  
-    <div>
+    <div className="fondoNegro">
       <div>
         <h1 className="titulo">Editor</h1>
         <p className="subtitulo">Rellene los campos con su informacion personal</p>
