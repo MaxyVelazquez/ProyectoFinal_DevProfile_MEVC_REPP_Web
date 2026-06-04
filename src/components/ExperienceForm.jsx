@@ -43,6 +43,13 @@ function ExperienceForm() {
 
     if (!form.periodo.trim()) {
       nuevosErrores.periodo = "El periodo es obligatorio.";
+    }else{
+      if(form.periodo.trim()){
+            const regexPeriodo = /^[0-9\- ]+$/;
+            if (!regexPeriodo.test(form.periodo)) {
+                nuevosErrores.periodo = "El periodo solo puede contener números y guiones";
+            }
+        }
     }
 
     if (!form.descripcion.trim()) {
