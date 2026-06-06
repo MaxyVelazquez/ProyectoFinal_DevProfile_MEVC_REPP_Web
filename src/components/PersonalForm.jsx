@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { CVContext } from "../context/CVContext";
 
 function PersonalForm() {
-  const { datosPersonales, setDatosPersonales, enlaces, setEnlaces } = useContext(CVContext);
+  const { datosPersonales, setDatosPersonales, enlaces, setEnlaces, setPersonalGuardado } = useContext(CVContext);
   const [errores, setErrores]=useState({});
 
   const handleChange = (e) => {
@@ -30,8 +30,8 @@ function PersonalForm() {
       nuevosErrores.carrera="La carrera no puede tener más de 50 letras"
     }
 
-    if(!datosPersonales.ciudad.trim()){
-      nuevosErrores.ciudad="La ciudad es obligatoria";
+    if(!datosPersonales.pais.trim()){
+      nuevosErrores.pais="El país es obligatorio";
     }
 
     if(!datosPersonales.estado.trim()){
@@ -73,6 +73,7 @@ function PersonalForm() {
       setErrores(erroresEncontrados);
       return;
     }
+    setPersonalGuardado(true);
     setErrores({});
   }
 
@@ -105,8 +106,8 @@ function PersonalForm() {
 
       <div className="formGrupo">
         <label>País</label>
-        <input type="text" name="ciudad" value={datosPersonales.ciudad} onChange={handleChange} />
-        {errores.ciudad&& <span className="error">{errores.ciudad}</span>}
+        <input type="text" name="pais" value={datosPersonales.pais} onChange={handleChange} />
+        {errores.pais&& <span className="error">{errores.pais}</span>}
       </div>
 
       <div className="formGrupo">

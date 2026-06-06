@@ -3,13 +3,16 @@ import { createContext, useState, useEffect } from 'react'
 export const CVContext = createContext()
 
 function CVProvider({ children }) {
+  const [personalGuardado, setPersonalGuardado] = useState(false);
 
   const [datosPersonales, setDatosPersonales] = useState(() => {
     const guardado = localStorage.getItem('datosPersonales')
     return guardado ? JSON.parse(guardado) : {
       nombre: '',
       carrera: '',
-      ciudad: '',
+      pais: '',
+      estado: '',
+      municipio: '',
       correo: '',
       telefono: '',
       descripcion: '',
@@ -76,7 +79,8 @@ function CVProvider({ children }) {
       proyectos, setProyectos,
       educacion, setEducacion,
       experiencia, setExperiencia,
-      imagen, setImagen
+      imagen, setImagen,
+      personalGuardado, setPersonalGuardado
     }}>
       {children}
     </CVContext.Provider>
