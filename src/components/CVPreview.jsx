@@ -37,7 +37,7 @@ function CVPreview() {
             <div className="cv-contacto-item">
               <span className="cv-icono">📍</span>
               <span>
-                {datosPersonales.ciudad}
+                {datosPersonales.pais}
                 {datosPersonales.estado ? `, ${datosPersonales.estado}` : ""}
                 {datosPersonales.municipio ? `, ${datosPersonales.municipio}` : ""}
               </span>
